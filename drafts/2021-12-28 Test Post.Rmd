@@ -4,7 +4,7 @@ layout: post
 always_allow_html: yes
 output:
   md_document:
-    variant: markdown_github
+    variant: gfm
   html_document:
     df_print: paged
 ---
@@ -12,6 +12,8 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(rchess)
+library(ggambit)
+
 
 ```
 
@@ -22,8 +24,17 @@ I had seen the fork but wasn't worried. My main concern was that my car was in a
 stared at the board thinking something must be there and there was.
 
 ```{r board,echo = FALSE}
-chessboardjs(fen = "2r1r1k1/5ppp/8/1N1p4/8/1PP5/2KQN1PP/q7 w - - 0 29", width = 300, height = 300)
 
+fen <- "2r1r1k1/5ppp/8/1N1p4/8/1PP5/2KQN1PP/q7 w - - 0 29"
+plot_fen(fen, perspective = "b",
+  palette = "brown",
+  piece_scale = 0.95,
+  show_coords = TRUE,
+  show_fen = FALSE,
+  news_spacing = 0.15,
+  news_thickness = 0.2,
+  border_col = NA,
+  border_size = 0.50) 
 ```
 
 ## Solution
