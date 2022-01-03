@@ -1,8 +1,7 @@
 ---
+title: "2021-12-28 Recent Tactics OTB"
 layout: post
-title: "2021-12-28 Test Post"
-author: "Bob Gore"
-date: "28/12/2021"
+always_allow_html: yes
 output:
   md_document:
     variant: markdown_github
@@ -12,30 +11,31 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library(reticulate)
-py_config()
 library(rchess)
-library(chess)
-library(magrittr)
+
 ```
 
-## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+I managed to find a nice tactic in my OTB game in November 21 to finish. Here  white played  29. Nd6 forking my rooks.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+I had seen the fork but wasn't worried. My main concern was that my car was in a multistorey car park that closed at 10.30 it was now 9:50 and I thought I didnt have time for an ending I needed to find a finish -so I
+stared at the board thinking something must be there and there was.
 
-```{r cars}
-Chapter1<- game() %>% move('d4','d5','Nc3','Nf6','Bf4','e6','Nb5','Bd6','Nxd6+','cxd6', 'e3', 'Nc6', 'Nf3', 'h6', 'h3', 'O-O','Be2', 'Re8','c3','Qb6')
-plot(Chapter1)
+```{r board,echo = FALSE}
+chessboardjs(fen = "2r1r1k1/5ppp/8/1N1p4/8/1PP5/2KQN1PP/q7 w - - 0 29", width = 300, height = 300)
+
 ```
 
-## Including Plots
+## Solution
 
-You can also embed plots, for example:
+<div id="spoiler" style="display:none">
+29 Nd6? Rxe2 (my opponent resigned here)  as 30. Qxe2 Rxc3+ 31. Kd2 Qc1#  or is losing the queen 
+</div>
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+<button title="Click to show answer" type="button"
+   onclick="if(document.getElementById('spoiler') .style.display=='none')
+              {document.getElementById('spoiler') .style.display=''}
+            else{document.getElementById('spoiler') .style.display='none'}">
+  Show/hide
+</button>
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
